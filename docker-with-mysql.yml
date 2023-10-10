@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    container_name: oclock-mysql
+    image: pimarie/oclock:mysql
+    ports:
+      - "127.0.0.1:3306:3306"
+    networks:
+      - oclock-network
+    environment:
+      MARIADB_ROOT_PASSWORD: root_password
+      MARIADB_DATABASE: oclock_DB
+      MARIADB_USER: oclock 
+      MARIADB_PASSWORD: oclock_password
+      
+networks:
+  oclock-network:
+    external: false
+    name: oclock-network
