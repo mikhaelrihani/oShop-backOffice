@@ -38,12 +38,30 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`, `subtitle`, `picture`, `home_order`, `created_at`, `updated_at`) VALUES
 (1,	'Détente',	'Se faire plaisir',	'assets/images/categ1.jpeg',	4,	'2018-10-17 06:00:00',	NULL),
-(2,	'Au travail',	'C\'est parti',	'assets/images/categ2.jpeg',	2,	'2018-10-17 06:00:00',	NULL),
+(2,	'Au travail',	'C\est parti',	'assets/images/categ2.jpeg',	2,	'2018-10-17 06:00:00',	NULL),
 (3,	'Cérémonie',	'Bien choisir',	'assets/images/categ3.jpeg',	5,	'2018-10-17 06:00:00',	NULL),
 (4,	'Sortir',	'Faire un tour',	'assets/images/categ4.jpeg',	3,	'2018-10-17 06:00:00',	NULL),
 (5,	'Vintage',	'Découvrir',	'assets/images/categ5.jpeg',	1,	'2018-10-17 06:00:00',	NULL),
 (6,	'Piscine et bains',	NULL,	NULL,	0,	'2018-10-17 06:00:00',	NULL),
 (7,	'Sport',	NULL,	NULL,	0,	'2018-10-17 06:00:00',	NULL);
+DROP TABLE IF EXISTS `type`;
+CREATE TABLE `type` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL COMMENT 'Le nom du type',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'La date de création de la catégorie',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT 'La date de la dernière mise à jour de la catégorie',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+INSERT INTO `type` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1,	'Chaussures de ville',	'2018-10-17 08:00:00',	NULL),
+(2,	'Chaussures de sport',	'2018-10-17 08:00:00',	NULL),
+(3,	'Tongs',	'2018-10-17 08:00:00',	NULL),
+(4,	'Chaussures ouvertes',	'2018-10-17 08:00:00',	NULL),
+(5,	'Talons éguilles',	'2018-10-17 08:00:00',	NULL),
+(6,	'Talons',	'2018-10-17 08:00:00',	NULL),
+(7,	'Pantoufles',	'2018-10-17 08:00:00',	NULL),
+(8,	'Chaussons',	'2018-10-17 08:00:00',	NULL);
 
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
@@ -94,23 +112,5 @@ INSERT INTO `product` (`id`, `name`, `description`, `picture`, `price`, `rate`, 
 (25,	'Sans dale',	'Nunc vero inanes flatus quorundam vile esse quicquid extra urbis pomerium nascitur aestimant praeter orbos et caelibes, nec credi potest qua obsequiorum diversitate coluntur homines sine liberis Romae.',	'assets/images/produits/25-100dales.jpg',	23.00,	2,	1,	'2018-10-17 09:00:00',	NULL,	7,	4,	4),
 (26,	'Talon aibrille',	'Proinde concepta rabie saeviore, quam desperatio incendebat et fames, amplificatis viribus ardore incohibili in excidium urbium matris Seleuciae efferebantur, quam comes tuebatur Castricius tresque legiones bellicis sudoribus induratae.',	'assets/images/produits/26-oCirage.jpg',	240.00,	5,	1,	'2018-10-17 09:00:00',	NULL,	3,	3,	5);
 
-DROP TABLE IF EXISTS `type`;
-CREATE TABLE `type` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL COMMENT 'Le nom du type',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'La date de création de la catégorie',
-  `updated_at` timestamp NULL DEFAULT NULL COMMENT 'La date de la dernière mise à jour de la catégorie',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
-INSERT INTO `type` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1,	'Chaussures de ville',	'2018-10-17 08:00:00',	NULL),
-(2,	'Chaussures de sport',	'2018-10-17 08:00:00',	NULL),
-(3,	'Tongs',	'2018-10-17 08:00:00',	NULL),
-(4,	'Chaussures ouvertes',	'2018-10-17 08:00:00',	NULL),
-(5,	'Talons éguilles',	'2018-10-17 08:00:00',	NULL),
-(6,	'Talons',	'2018-10-17 08:00:00',	NULL),
-(7,	'Pantoufles',	'2018-10-17 08:00:00',	NULL),
-(8,	'Chaussons',	'2018-10-17 08:00:00',	NULL);
 
 -- 2023-05-25 13:12:01
